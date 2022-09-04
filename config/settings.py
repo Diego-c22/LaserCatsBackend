@@ -42,6 +42,8 @@ CORS_ORIGIN_ALLOW_ALL = env('CORS_ORIGIN_ALLOW_ALL')
 # Application definition
 
 DJANGO_APPS = [
+    'admin_interface',
+    'colorfield',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -138,7 +140,14 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.1/howto/static-files/
 
-STATIC_URL = 'static/'
+MEDIA_ROOT = str(BASE_DIR / 'media')
+STATIC_ROOT = str(BASE_DIR / 'templates')
+# LOGS_PATH = BASE_DIR / 'logs'
+
+STATIC_URL = '/assets/'
+MEDIA_URL = '/media/'
+
+TEMPLATE_PATH = BASE_DIR / 'templates'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
